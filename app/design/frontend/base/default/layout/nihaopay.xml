@@ -1,0 +1,15 @@
+<layout version="1.0.0">
+    <checkout_onepage_index>
+        <reference name="head">
+            <block type="core/text" name="nihaopay.validation">
+                <action method="setText">
+                    <text>
+                        <![CDATA[<script type="text/javascript">
+                            Validation.creditCartTypes.set('UN',[new RegExp('^(62[0-9]{14,17})$'), new RegExp('^[0-9]{3}$'), true]);
+                        </script>]]>
+                    </text>
+                </action>
+            </block>
+        </reference>
+    </checkout_onepage_index>
+</layout>

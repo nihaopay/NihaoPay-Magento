@@ -1,0 +1,7 @@
+<ul class="form-list nihaopay-securepays" id="payment_form_<?php echo $this->getMethodCode() ?>" style="display:none;">
+    <li>
+	<img src="<?php echo $this->getSkinUrl( 'nihaopay/' . $this->getMethodCode() .'/logo_' . Mage::app()->getLocale()->getLocaleCode() . '.png'); ?>" >
+	<br/>
+	<p><strong><?php echo $this->__('You will be taken to the payment website when you click Place Order');?></strong></p>
+    </li>
+</ul>
