@@ -128,7 +128,12 @@ class Requestor
 		$headers = array("Authorization: Bearer " . $token);
 
 
-		
+		$product='';      
+        foreach($order->getAllItems() as $item)
+        {
+            $product .= $item->getName().'...'; 
+            break;          
+        }
 		$params = array("amount"=>$order->getGrandTotal()*100
 				,"vendor"=>$vendor
 				,"currency"=>$order->getOrderCurrencyCode()
@@ -136,6 +141,8 @@ class Requestor
 				,"ipn_url"=>$ipn
 				,"callback_url"=>$callback
 				,"terminal" => $this->ismobile()?'WAP':'ONLINE'
+                ,"description"=>$product
+                ,"note"=>sprintf('#%s(%s)', $order->getRealOrderId(), $order->getCustomerEmail())
 				);
 		
 		$this->log('send params to '.$url .' with head' . print_r($headers,true));
