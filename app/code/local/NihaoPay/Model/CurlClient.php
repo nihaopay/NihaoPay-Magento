@@ -1,6 +1,6 @@
 <?php
 
-require_once 'NihaoPay/Model/Error/Api.php';
+require_once 'Nihaopay/Model/Error/Api.php';
 
 class CurlClient 
 {

@@ -1,8 +1,8 @@
 <?php
-require_once 'NihaoPay/Model/Requestor.php';
-require_once 'NihaoPay/Model/Error/Base.php';
+require_once 'Nihaopay/Model/Requestor.php';
+require_once 'Nihaopay/Model/Error/Base.php';
 
-class NihaoPay_Model_MethodAbstract extends Mage_Payment_Model_Method_Abstract {
+class Nihaopay_Model_MethodAbstract extends Mage_Payment_Model_Method_Abstract {
 
     protected $_canRefund               = true;
     protected $_canRefundInvoicePartial = true;

@@ -1,5 +1,5 @@
 <?php
-class NihaoPay_Block_SecurePay_Form extends Mage_Payment_Block_Form
+class Nihaopay_Block_Securepay_Form extends Mage_Payment_Block_Form
 {
   protected function _construct()
   {

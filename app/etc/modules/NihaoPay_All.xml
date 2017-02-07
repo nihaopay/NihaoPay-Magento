@@ -1,13 +1,13 @@
 <?xml version="1.0"?>
 <config>
   <modules>
-    <NihaoPay>
+    <Nihaopay>
       <active>true</active>
       <codePool>local</codePool>
        
       <depends>
         <Mage_Payment />
       </depends>
-    </NihaoPay>
+    </Nihaopay>
   </modules>
 </config>

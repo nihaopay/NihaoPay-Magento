@@ -1,6 +1,6 @@
 <?php
 
-namespace NihaoPay\Model\Error;
+namespace Nihaopay\Model\Error;
 
 class ApiConnection extends Base
 {

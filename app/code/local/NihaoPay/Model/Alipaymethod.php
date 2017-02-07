@@ -1,7 +1,7 @@
 <?php
 
-class NihaoPay_Model_Alipaymethod extends NihaoPay_Model_MethodAbstract {
-  	protected $_code  = NihaoPay_Model_MethodAbstract::CODE_ALIPAY;
+class Nihaopay_Model_Alipaymethod extends Nihaopay_Model_MethodAbstract {
+  	protected $_code  = Nihaopay_Model_MethodAbstract::CODE_ALIPAY;
     protected $_formBlockType = 'nihaopay/securepay_form';
     protected $_infoBlockType = 'payment/info_cc';
     protected $_isInitializeNeeded      = true;

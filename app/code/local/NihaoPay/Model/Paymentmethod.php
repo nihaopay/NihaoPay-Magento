@@ -1,8 +1,8 @@
 <?php
-require_once 'NihaoPay/Model/Requestor.php';
-require_once 'NihaoPay/Model/Error/Base.php';
+require_once 'Nihaopay/Model/Requestor.php';
+require_once 'Nihaopay/Model/Error/Base.php';
 
-class NihaoPay_Model_Paymentmethod extends NihaoPay_Model_MethodAbstract {
+class Nihaopay_Model_Paymentmethod extends Nihaopay_Model_MethodAbstract {
   	protected $_code  = 'nihaopay';
     protected $_isInitializeNeeded      = false;
     protected $_canUseForMultishipping  = true;

@@ -1,9 +1,9 @@
 <?php
-require_once 'NihaoPay/Model/Requestor.php';
-require_once 'NihaoPay/Model/Error/Base.php';
+require_once 'Nihaopay/Model/Requestor.php';
+require_once 'Nihaopay/Model/Error/Base.php';
 
 
-class Nihaopay_Block_SecurePay_NihaoPayform extends Mage_Core_Block_Abstract
+class Nihaopay_Block_Securepay_Nihaopayform extends Mage_Core_Block_Abstract
 {
 
 
@@ -25,13 +25,13 @@ class Nihaopay_Block_SecurePay_NihaoPayform extends Mage_Core_Block_Abstract
 		$methodCode = $oOrder->getPayment()->getMethod();
 		$this->log('current method=' . $methodCode);
         $vendor = '';
-		if($methodCode == NihaoPay_Model_MethodAbstract::CODE_ALIPAY){
+		if($methodCode == Nihaopay_Model_MethodAbstract::CODE_ALIPAY){
 			$vendor = 'alipay';
 		}
-		else if($methodCode == NihaoPay_Model_MethodAbstract::CODE_UNIONPAY){
+		else if($methodCode == Nihaopay_Model_MethodAbstract::CODE_UNIONPAY){
 			$vendor = 'unionpay';
 		}
-		else if($methodCode == NihaoPay_Model_MethodAbstract::CODE_WECHATPAY){
+		else if($methodCode == Nihaopay_Model_MethodAbstract::CODE_WECHATPAY){
 			$vendor = 'wechatpay';
 		}
 		$requestor = new Requestor();

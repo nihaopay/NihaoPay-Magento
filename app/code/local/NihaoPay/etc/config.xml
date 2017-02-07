@@ -1,27 +1,27 @@
 <?xml version="1.0"?>
 <config>
   <modules>
-    <NihaoPay>
+    <Nihaopay>
       <version>1.0.0</version>
-    </NihaoPay>
+    </Nihaopay>
   </modules>
   
   <global>
     <helpers>
       <nihaopay>
-        <class>NihaoPay_Helper</class>
+        <class>Nihaopay_Helper</class>
       </nihaopay>
     </helpers>
  
     <blocks>
       <nihaopay>
-        <class>NihaoPay_Block</class>
+        <class>Nihaopay_Block</class>
       </nihaopay>
     </blocks>
          
     <models>
       <nihaopay>
-        <class>NihaoPay_Model</class>
+        <class>Nihaopay_Model</class>
       </nihaopay>
       
     </models> 
@@ -87,7 +87,7 @@
       <nihaopay>
         <use>standard</use>
         <args>
-          <module>NihaoPay</module>
+          <module>Nihaopay</module>
           <frontName>nihaopay</frontName>
         </args>
       </nihaopay>

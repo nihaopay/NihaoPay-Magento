@@ -1,7 +1,7 @@
 <?php
 
 
-class NihaoPay_Model_Source_CcAutoDetect
+class Nihaopay_Model_Source_CcAutoDetect
 {
     public function toOptionArray()
     {

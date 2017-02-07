@@ -1,9 +1,5 @@
 <?php
 
-//namespace GlidingEagle\Nihaopay\Model\Error;
-
-//use Exception;
-
 abstract class Error_Base extends Exception
 {
 
