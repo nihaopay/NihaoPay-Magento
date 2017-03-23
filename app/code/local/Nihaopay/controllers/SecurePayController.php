@@ -1,6 +1,6 @@
 <?php
 
-class Nihaopay_SecurepayController extends Mage_Core_Controller_Front_Action 
+class Nihaopay_SecurePayController extends Mage_Core_Controller_Front_Action
 {
 	public function redirectAction() 
 	{

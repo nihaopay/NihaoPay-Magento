@@ -1,6 +1,6 @@
 <?php
 
-class NihaoPay_Model_Wechatpaymethod extends Nihaopay_Model_MethodAbstract {
+class Nihaopay_Model_Wechatpaymethod extends Nihaopay_Model_MethodAbstract {
   	protected $_code  = NihaoPay_Model_MethodAbstract::CODE_WECHATPAY;
     protected $_formBlockType = 'nihaopay/securepay_form';
     protected $_infoBlockType = 'payment/info_cc';
