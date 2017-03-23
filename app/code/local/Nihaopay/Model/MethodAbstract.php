@@ -35,7 +35,7 @@ class Nihaopay_Model_MethodAbstract extends Mage_Payment_Model_Method_Abstract {
         
 	public function getOrderPlaceRedirectUrl()
 	{
-		return Mage::getUrl('nihaopay/securepay/redirect', array('_secure' => true));
+		return Mage::getUrl('nihaopay/securePay/redirect', array('_secure' => true));
 	}  	
 
 
