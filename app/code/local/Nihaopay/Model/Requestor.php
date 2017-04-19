@@ -31,6 +31,8 @@ class Requestor
 					,"card_exp_month"=>'11'
 					,"card_exp_year"=>'2017'
 					,"card_cvv"=>'123'
+                    ,"client_ip"=>Mage::helper('core/http')->getRemoteAddr()
+                    ,"reference"=>$this->getReferenceCode($order->getIncrementId())
 					,"description"=>sprintf('#%s, %s', $order->getIncrementId(), $order->getCustomerEmail())
 					);
 		}else{
@@ -41,6 +43,8 @@ class Requestor
 					,"card_exp_month"=>sprintf('%02d',$payment->getCcExpMonth())
 					,"card_exp_year"=>$payment->getCcExpYear()
 					,"card_cvv"=>$payment->getCcCid()
+                    ,"client_ip"=>Mage::helper('core/http')->getRemoteAddr()
+                    ,"reference"=>$this->getReferenceCode($order->getIncrementId())
 					,"description"=>sprintf('#%s, %s', $order->getIncrementId(), $order->getCustomerEmail())
 					);
 		}
