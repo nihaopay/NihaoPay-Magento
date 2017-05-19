@@ -20,8 +20,8 @@ class Nihaopay_Block_Securepay_Nihaopayform extends Mage_Core_Block_Abstract
 		$sOrderId = Mage::getSingleton('checkout/session')->getLastRealOrderId();
 		$oOrder = Mage::getModel('sales/order')->loadByIncrementId($sOrderId);
 		
-		$ipn = Mage::getUrl('nihaopay/securepay/ipn');
-		$callback = Mage::getUrl('nihaopay/securepay/callback');
+		$ipn = Mage::getUrl('nihaopay/securePay/ipn');
+		$callback = Mage::getUrl('nihaopay/securePay/callback');
 		$methodCode = $oOrder->getPayment()->getMethod();
 		$this->log('current method=' . $methodCode);
         $vendor = '';
