@@ -24,7 +24,7 @@ class Requestor
 		
 		if($this->debug){
 			//test account
-			$params = array("amount"=>$order->getGrandTotal()*100
+			$params = array("amount"=>$this->getAmount($order->getGrandTotal(),$order->getOrderCurrencyCode())
 					,"card_type"=>"unionpay"
 					,"currency"=>$order->getOrderCurrencyCode()
 					,"card_number"=>'6221558812340000'
@@ -36,7 +36,7 @@ class Requestor
 					,"description"=>sprintf('#%s, %s', $order->getIncrementId(), $order->getCustomerEmail())
 					);
 		}else{
-			$params = array("amount"=>$order->getGrandTotal()*100
+			$params = array("amount"=>$this->getAmount($order->getGrandTotal(),$order->getOrderCurrencyCode())
 					,"card_type"=>"unionpay"
 					,"currency"=>$order->getOrderCurrencyCode()
 					,"card_number"=>$payment->getCcNumber()
@@ -68,7 +68,7 @@ class Requestor
 			$url = "https://api.nihaopay.com/v1.2/transactions/" . $transactionId . "/refund";
 		$headers = array("Authorization: Bearer " . $token);
 
-		$params = array("amount"=>$amount*100
+		$params = array("amount"=>$this->getAmount($amount,$order->getOrderCurrencyCode())
 				,"currency"=>$order->getOrderCurrencyCode()
 				,"reason"=>''
 				);
@@ -138,7 +138,7 @@ class Requestor
             $product .= $item->getName().'...'; 
             break;          
         }
-		$params = array("amount"=>$order->getGrandTotal()*100
+		$params = array("amount"=>$this->getAmount($order->getGrandTotal(),$order->getOrderCurrencyCode())
 				,"vendor"=>$vendor
 				,"currency"=>$order->getOrderCurrencyCode()
 				,"reference"=>$this->getReferenceCode($order->getIncrementId())
@@ -166,6 +166,16 @@ class Requestor
         return $order_id . 'at' . $tmstemp;
     }
     
+    function getAmount($amount, $currency = 'USD')
+    {
+        if ($currency == 'JPY') {
+            return (int)$amount;
+        }
+        else{
+            $amount = round($amount, 2) * 100;
+            return (int)$amount;
+        }
+    }
 
     
     function ismobile() {
