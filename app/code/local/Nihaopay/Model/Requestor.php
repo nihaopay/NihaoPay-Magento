@@ -27,10 +27,10 @@ class Requestor
 			$params = array("amount"=>$this->getAmount($order->getGrandTotal(),$order->getOrderCurrencyCode())
 					,"card_type"=>"unionpay"
 					,"currency"=>$order->getOrderCurrencyCode()
-					,"card_number"=>'6221558812340000'
-					,"card_exp_month"=>'11'
-					,"card_exp_year"=>'2017'
-					,"card_cvv"=>'123'
+					,"card_number"=>$payment->getCcNumber()
+					,"card_exp_month"=>sprintf('%02d',$payment->getCcExpMonth())
+					,"card_exp_year"=>$payment->getCcExpYear()
+					,"card_cvv"=>$payment->getCcCid()
                     ,"client_ip"=>Mage::helper('core/http')->getRemoteAddr()
                     ,"reference"=>$this->getReferenceCode($order->getIncrementId())
 					,"description"=>sprintf('#%s, %s', $order->getIncrementId(), $order->getCustomerEmail())
